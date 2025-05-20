@@ -1,0 +1,253 @@
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #f9f6f0;
+  color: #3b3a36;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.hero {
+  margin-bottom: 3em;
+}
+
+.hero-collage {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto 30px auto;
+}
+
+.hero-image-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  background: #fff;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.oficio-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: rgba(30, 30, 30, 0.75);
+  color: #fff;
+  padding: 14px 8px 10px 8px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25em;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 1px 0 #222;
+  z-index: 2;
+}
+
+.oficio-emoji {
+  font-size: 2em;
+  margin-bottom: 2px;
+  line-height: 1;
+}
+
+.oficio-nombre {
+  display: block;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  color: #2c3e50;
+  line-height: 1.3;
+  padding: 0 15px;
+}
+
+.intro {
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+  padding: 0 15px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2em;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.benefits li {
+  margin: 0.8em 0;
+  font-size: 1.05em;
+  padding: 0 15px;
+}
+
+.cta-text {
+  margin-bottom: 1.5em;
+  font-size: 1.1em;
+  padding: 0 15px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #a05f2d;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  margin: 1em 0;
+}
+
+.cta-button:hover {
+  background-color: #8e4f20;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.footer-text {
+  font-size: 0.9em;
+  margin-top: 40px;
+  color: #777;
+  padding: 0 15px;
+}
+
+@media screen and (max-width: 1200px) {
+  .hero-collage {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 800px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  .hero-collage {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 500px;
+  }
+  .hero-image-container {
+    aspect-ratio: 1;
+  }
+  .cta-button {
+    width: 90%;
+    max-width: 300px;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-collage {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    gap: 8px;
+  }
+  .hero-image-container {
+    aspect-ratio: 1;
+    padding: 0;
+  }
+  .oficio-info {
+    padding: 6px 4px 4px 4px;
+    font-size: 0.95em;
+    width: 96%;
+  }
+  .oficio-emoji {
+    font-size: 1.3em;
+    margin-bottom: 1px;
+  }
+  .intro, .cta-text {
+    font-size: 1em;
+  }
+  .benefits li {
+    font-size: 1em;
+  }
+}
+
+.header-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 60px auto 50px auto;
+  padding: 0 20px;
+}
+
+.header-intro h1 {
+  font-size: 3rem;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-weight: 700;
+  margin-bottom: 0.3em;
+  color: #3b3a36;
+}
+
+.divider-icon {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.header-intro h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #5c5c5c;
+  margin-bottom: 1em;
+}
+
+.header-intro p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 480px) {
+  .header-intro {
+    margin: 32px auto 30px auto;
+    padding: 0 8px;
+  }
+  .header-intro h1 {
+    font-size: 2rem;
+  }
+  .divider-icon {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  .header-intro h2 {
+    font-size: 1.05rem;
+  }
+  .header-intro p {
+    font-size: 0.98rem;
+  }
+} 
