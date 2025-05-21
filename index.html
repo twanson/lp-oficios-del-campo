@@ -360,19 +360,35 @@
         const benefitsCards = wrapper.querySelector('.benefits-cards');
         const leftArrow = wrapper.querySelector('.carousel-arrow.left');
         const rightArrow = wrapper.querySelector('.carousel-arrow.right');
-        const cardWidth = () => {
-          const firstCard = benefitsCards.querySelector('.card');
-          return firstCard ? firstCard.offsetWidth : 0;
-        };
+        const cards = benefitsCards.querySelectorAll('.card');
         const gap = 16; // Debe coincidir con el gap en CSS
 
-        if (benefitsCards && leftArrow && rightArrow) {
+        const getCardWidth = () => {
+          return cards.length > 0 ? cards[0].offsetWidth : 0;
+        };
+
+        if (benefitsCards && leftArrow && rightArrow && cards.length > 0) {
           leftArrow.addEventListener('click', function() {
-            benefitsCards.scrollBy({ left: -(cardWidth() + gap), behavior: 'smooth' });
+            const cardWidth = getCardWidth();
+            // Si está cerca del inicio (menos de la mitad de una tarjeta desde el borde izquierdo)
+            if (benefitsCards.scrollLeft < (cardWidth / 2)) {
+              // Ir al final (scroll instantáneo) y luego a la última tarjeta (scroll suave)
+              benefitsCards.scrollTo({ left: benefitsCards.scrollWidth, behavior: 'instant' });
+              benefitsCards.scrollBy({ left: -(cardWidth + gap), behavior: 'smooth' });
+            } else {
+              benefitsCards.scrollBy({ left: -(cardWidth + gap), behavior: 'smooth' });
+            }
           });
 
           rightArrow.addEventListener('click', function() {
-            benefitsCards.scrollBy({ left: cardWidth() + gap, behavior: 'smooth' });
+            const cardWidth = getCardWidth();
+            // Si está cerca del final (scrollLeft + offsetWidth es casi scrollWidth)
+            if (benefitsCards.scrollLeft + benefitsCards.offsetWidth >= benefitsCards.scrollWidth - (cardWidth / 2)) {
+              // Ir al principio (scroll suave)
+              benefitsCards.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+              benefitsCards.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
+            }
           });
         }
       }
