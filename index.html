@@ -200,13 +200,12 @@
     function scrollToTop() {
       setTimeout(function() {
         window.scrollTo(0, 0);
-      }, 0);
+      }, 50);
     }
 
     window.onload = scrollToTop;
 
     window.addEventListener('pageshow', function(event) {
-      // Si la página se carga desde bfcache (back/forward cache), forzar scroll
       if (event.persisted) {
         scrollToTop();
       }
