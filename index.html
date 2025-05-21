@@ -28,7 +28,18 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     }
 
+    .benefits-cards {
+      display: grid;
+      gap: 30px;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
     @media (min-width: 768px) {
+      .benefits-cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
       /* Aumentar tamaño del subtítulo debajo del título */
       .header-intro h2 {
         font-size: 2rem;
@@ -72,6 +83,37 @@
       .cta-text {
         text-align: center;
       }
+    }
+    .card {
+      background-color: #fff;
+      border: 1px solid #e1d9cf;
+      border-radius: 10px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+
+    .card .icon {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: #3b3a36;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -142,11 +184,23 @@
       </a>
     </div>
 
-    <ul class="benefits">
-      <li>🌱 Resolver dudas reales del día a día</li>
-      <li>🔧 Compartir lo que funciona (y lo que no)</li>
-      <li>🤝 Conectar con gente que vive del oficio artesanal y del campo</li>
-    </ul>
+    <section class="benefits-cards">
+      <div class="card">
+        <div class="icon">🌱</div>
+        <h3>Aprende de otros</h3>
+        <p>Resuelve dudas reales sobre lo que haces cada día.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔧</div>
+        <h3>Comparte soluciones</h3>
+        <p>Lo que funciona (y lo que no) entre quienes ya lo han vivido.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>Conecta con otros oficios</h3>
+        <p>Nadie debería trabajar aislado. Esta red es para apoyarse.</p>
+      </div>
+    </section>
 
     <p class="cta-text">
       Estamos creando una comunidad práctica y cercana.  
