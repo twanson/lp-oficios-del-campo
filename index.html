@@ -29,64 +29,24 @@
     }
 
     .benefits-cards {
-      display: grid;
-      gap: 30px;
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+      background-color: #f5f0e8;
+      padding: 60px 20px;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      max-width: 100%;
+      margin: 80px auto;
+      border-radius: 12px;
+      -webkit-overflow-scrolling: touch;
     }
 
-    @media (min-width: 768px) {
-      .benefits-cards {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      /* Aumentar tamaño del subtítulo debajo del título */
-      .header-intro h2 {
-        font-size: 2rem;
-        line-height: 1.4;
-        margin-bottom: 1.2em;
-      }
-
-      /* Textos introductorios */
-      .header-intro p,
-      .intro,
-      .cta-text {
-        font-size: 1.3rem;
-        line-height: 1.75;
-        max-width: 750px;
-        margin: 0 auto 2rem auto;
-      }
-
-      /* Lista de beneficios con iconos */
-      .benefits li {
-        font-size: 1.2rem;
-        margin: 0.8em 0;
-      }
-
-      /* Botones CTA más visibles */
-      .cta-button {
-        font-size: 1.2rem;
-        padding: 16px 32px;
-        border-radius: 10px;
-      }
-
-      /* Mayor separación visual entre bloques dentro de la misma sección */
-      .header-intro,
-      .benefits,
-      .cta-text {
-        margin-bottom: 60px;
-      }
-
-      /* Centrado de textos clave */
-      .header-intro h2,
-      .header-intro p,
-      .cta-text {
-        text-align: center;
-      }
-    }
     .card {
-      background-color: #fff;
-      border: 1px solid #e1d9cf;
+      min-width: 280px;
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+      background-color: #ffffff;
+      border: 1px solid #dfd7cc;
       border-radius: 10px;
       padding: 24px;
       text-align: center;
@@ -114,6 +74,48 @@
       font-size: 1rem;
       color: #444;
       line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+      .benefits-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        overflow: visible;
+        max-width: 1000px;
+        gap: 30px;
+      }
+      .card {
+        min-width: unset;
+        flex: unset;
+        scroll-snap-align: unset;
+      }
+      .header-intro h2 {
+        font-size: 2rem;
+        line-height: 1.4;
+        margin-bottom: 1.2em;
+      }
+      .header-intro p,
+      .intro,
+      .cta-text {
+        font-size: 1.3rem;
+        line-height: 1.75;
+        max-width: 750px;
+        margin: 0 auto 2rem auto;
+      }
+      .cta-button {
+        font-size: 1.2rem;
+        padding: 16px 32px;
+        border-radius: 10px;
+      }
+      .header-intro,
+      .cta-text {
+        margin-bottom: 60px;
+      }
+      .header-intro h2,
+      .header-intro p,
+      .cta-text {
+        text-align: center;
+      }
     }
   </style>
 </head>
