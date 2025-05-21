@@ -31,22 +31,22 @@
     /* Estilos base para .benefits-cards y .card (móvil primero) */
     .benefits-cards {
       background-color: #f5f0e8;
-      padding: 30px 0; /* Reducido padding vertical */
+      padding: 30px 0 50px 0; /* Aumentado padding inferior para el ::after */
       display: flex; 
       overflow-x: auto; 
       overflow-y: hidden; 
       scroll-snap-type: x mandatory; 
-      gap: 12px; /* Reducido gap */
+      gap: 16px; /* Gap entre cards */
       margin: 50px auto;
       border-radius: 12px;
       -webkit-overflow-scrolling: touch; 
       position: relative; 
-      padding-left: calc((100vw - 80vw - 12px) / 2); /* Ajustado para card de 80vw y gap de 12px */
-      padding-right: calc((100vw - 80vw - 12px) / 2);
+      padding-left: calc((100vw - 80vw - 16px) / 2); 
+      padding-right: calc((100vw - 80vw - 16px) / 2);
     }
 
     .card {
-      width: 80vw; /* Reducido el ancho */
+      width: 80vw; 
       min-width: 80vw; 
       aspect-ratio: 1 / 1; 
       flex: 0 0 auto; 
@@ -54,13 +54,14 @@
       background-color: #ffffff;
       border: 1px solid #dfd7cc;
       border-radius: 10px;
-      padding: 16px; /* Reducido padding interno */
+      padding: 20px; /* Aumentado padding interno para más aire */
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.04);
       transition: transform 0.2s ease;
       display: flex; 
       flex-direction: column; 
       justify-content: center; 
+      align-items: center; /* Centrar horizontalmente también */
     }
 
     .card:hover {
@@ -69,33 +70,35 @@
     }
 
     .card .icon {
-      font-size: 1.8rem; /* Reducido */
-      margin-bottom: 6px; 
+      font-size: 2.2rem; /* Aumentado */
+      margin-bottom: 10px; /* Aumentado */
     }
 
     .card h3 {
-      font-size: 1.1rem; /* Reducido */
-      margin-bottom: 4px; 
+      font-size: 1.25rem; /* Aumentado */
+      margin-bottom: 8px; /* Aumentado */
       color: #3b3a36;
     }
 
     .card p {
-      font-size: 0.85rem; /* Reducido */
+      font-size: 0.95rem; /* Aumentado */
       color: #444;
-      line-height: 1.35; 
+      line-height: 1.45; /* Aumentado */
+      max-width: 90%; /* Para que no se pegue a los bordes */
     }
     
     .benefits-cards::after {
       content: "⬅️ desliza para ver más ➡️"; 
       position: absolute;
-      bottom: 8px; /* Ajustado para nuevo padding del contenedor */
+      bottom: 15px; /* Ajustado para estar dentro del padding del contenedor */
       left: 50%;
       transform: translateX(-50%);
-      font-size: 0.8rem; /* Reducido */
+      font-size: 0.85rem; 
       color: #777; 
-      background-color: rgba(245, 240, 232, 0.9); /* Ligeramente más opaco */
-      padding: 3px 6px;
-      border-radius: 4px;
+      background-color: rgba(245, 240, 232, 0.9);
+      padding: 5px 10px; /* Más padding interno */
+      border-radius: 6px;
+      white-space: nowrap; /* Para que no se rompa en dos líneas */
     }
 
     @media (min-width: 768px) {
@@ -106,7 +109,7 @@
         max-width: 1000px; 
         gap: 30px; 
         padding: 60px 20px; 
-        margin: 80px auto; /* Restaurar margen original escritorio */
+        margin: 80px auto;
       }
       .card {
         width: auto; 
@@ -116,6 +119,7 @@
         scroll-snap-align: unset; 
         padding: 24px; 
         display: block; 
+        align-items: unset; /* Resetear align-items */
       }
       .card .icon {
         font-size: 2.2rem; 
@@ -128,6 +132,7 @@
       .card p {
         font-size: 1rem; 
         line-height: 1.6; 
+        max-width: 100%; /* Resetear max-width */
       }
       .benefits-cards::after {
         content: ""; 
