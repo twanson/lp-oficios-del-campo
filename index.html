@@ -28,32 +28,42 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     }
 
+    /* Estilos base para .benefits-cards y .card (móvil primero) */
     .benefits-cards {
       background-color: #f5f0e8;
-      padding: 60px 20px;
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 16px;
-      max-width: 100%;
-      margin: 80px auto;
+      padding: 40px 0; /* Padding vertical, horizontal se maneja con scroll */
+      display: flex; 
+      overflow-x: auto; 
+      overflow-y: hidden; /* Evitar scroll vertical */
+      scroll-snap-type: x mandatory; 
+      gap: 16px; 
+      margin: 60px auto;
       border-radius: 12px;
-      -webkit-overflow-scrolling: touch;
-      position: relative;
+      -webkit-overflow-scrolling: touch; 
+      position: relative; 
+      /* Para centrar la primera y última card, calculamos padding */
+      /* Considerando card de 85vw y gap de 16px */
+      /* (100vw - 85vw - 16px) / 2 = (15vw - 16px) / 2. Usar % o vw para el padding */
+      padding-left: calc((100vw - 85vw) / 2);
+      padding-right: calc((100vw - 85vw) / 2);
     }
 
     .card {
-      min-width: 260px;
-      max-width: 85vw;
-      flex: 0 0 auto;
-      scroll-snap-align: center;
+      width: 85vw; /* Ancho principal de la card */
+      min-width: 85vw; /* Asegurar que no se encoja más */
+      aspect-ratio: 1 / 1; /* Hacerla cuadrada */
+      flex: 0 0 auto; 
+      scroll-snap-align: center; 
       background-color: #ffffff;
       border: 1px solid #dfd7cc;
       border-radius: 10px;
-      padding: 16px;
+      padding: 20px; /* Padding interno ajustado */
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.04);
       transition: transform 0.2s ease;
+      display: flex; /* Para centrar contenido verticalmente */
+      flex-direction: column; /* Para centrar contenido verticalmente */
+      justify-content: center; /* Para centrar contenido verticalmente */
     }
 
     .card:hover {
@@ -62,90 +72,97 @@
     }
 
     .card .icon {
-      font-size: 2rem;
-      margin-bottom: 10px;
+      font-size: 2rem; 
+      margin-bottom: 8px; /* Reducido */
     }
 
     .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 8px;
+      font-size: 1.15rem; /* Reducido */
+      margin-bottom: 6px; /* Reducido */
       color: #3b3a36;
     }
 
     .card p {
-      font-size: 0.95rem;
+      font-size: 0.9rem; /* Reducido */
       color: #444;
-      line-height: 1.5;
+      line-height: 1.4; /* Reducido */
     }
     
     .benefits-cards::after {
-      content: "⬅️ desliza ➡️";
+      content: "⬅️ desliza para ver más ➡️"; /* Texto más claro */
       position: absolute;
-      bottom: -32px;
+      bottom: 15px; /* Más arriba, dentro del padding del contenedor */
       left: 50%;
       transform: translateX(-50%);
-      font-size: 0.9rem;
-      color: #777;
-      padding-top: 10px;
+      font-size: 0.85rem;
+      color: #777; 
+      background-color: rgba(245, 240, 232, 0.8); /* Fondo para legibilidad */
+      padding: 4px 8px;
+      border-radius: 4px;
     }
 
     @media (min-width: 768px) {
       .benefits-cards {
-        display: grid;
+        display: grid; 
         grid-template-columns: repeat(3, 1fr);
-        overflow: visible;
-        max-width: 1000px;
-        gap: 30px;
-        padding-bottom: 60px;
+        overflow: visible; 
+        max-width: 1000px; 
+        gap: 30px; 
+        padding: 60px 20px; /* Restaurar padding original */
       }
       .card {
-        min-width: unset;
-        max-width: unset;
-        flex: unset;
-        scroll-snap-align: unset;
-        padding: 24px;
+        width: auto; /* Resetear width */
+        min-width: unset; 
+        aspect-ratio: auto; /* Resetear aspect-ratio */
+        flex: unset; 
+        scroll-snap-align: unset; 
+        padding: 24px; 
+        display: block; /* Volver a block para que el contenido fluya normal */
       }
       .card .icon {
-        font-size: 2.2rem;
-        margin-bottom: 12px;
+        font-size: 2.2rem; 
+        margin-bottom: 12px; 
       }
       .card h3 {
-        font-size: 1.3rem;
+        font-size: 1.3rem; 
+        margin-bottom: 8px;
       }
       .card p {
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 1rem; 
+        line-height: 1.6; 
       }
       .benefits-cards::after {
-        content: "";
-        padding-top: 0;
+        content: ""; 
+        padding: 0;
+        background-color: transparent;
       }
+      /* ... otros estilos de escritorio ... */
       .header-intro h2 {
-        font-size: 2rem;
+        font-size: 2rem; 
         line-height: 1.4;
         margin-bottom: 1.2em;
       }
       .header-intro p,
       .intro,
       .cta-text {
-        font-size: 1.3rem;
+        font-size: 1.3rem; 
         line-height: 1.75;
         max-width: 750px;
         margin: 0 auto 2rem auto;
       }
       .cta-button {
-        font-size: 1.2rem;
+        font-size: 1.2rem; 
         padding: 16px 32px;
         border-radius: 10px;
       }
       .header-intro,
       .cta-text {
-        margin-bottom: 60px;
+        margin-bottom: 60px; 
       }
       .header-intro h2,
       .header-intro p,
       .cta-text {
-        text-align: center;
+        text-align: center; 
       }
     }
   </style>
@@ -280,7 +297,7 @@
     function scrollToTop() {
       setTimeout(function() {
         window.scrollTo(0, 0);
-      }, 50);
+      }, 50); // Aumentamos ligeramente el timeout a 50ms
     }
 
     window.onload = scrollToTop;
