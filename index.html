@@ -31,18 +31,17 @@
     /* Estilos base para .benefits-cards y .card (móvil primero) */
     .benefits-cards {
       background-color: #f5f0e8;
-      padding: 30px 0 50px 0; /* Aumentado padding inferior para el ::after */
+      padding: 30px 0 55px 0; /* Aumentado padding inferior para el ::after */
       display: flex; 
       overflow-x: auto; 
       overflow-y: hidden; 
       scroll-snap-type: x mandatory; 
-      gap: 16px; /* Gap entre cards */
+      gap: 16px; 
       margin: 50px auto;
       border-radius: 12px;
       -webkit-overflow-scrolling: touch; 
       position: relative; 
-      padding-left: calc((100vw - 80vw - 16px) / 2); 
-      padding-right: calc((100vw - 80vw - 16px) / 2);
+      /* Quitar padding-left/right para que el ::after se centre respecto al viewport */
     }
 
     .card {
@@ -54,15 +53,41 @@
       background-color: #ffffff;
       border: 1px solid #dfd7cc;
       border-radius: 10px;
-      padding: 20px; /* Aumentado padding interno para más aire */
+      padding: 15px; /* Ajustado padding interno */
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.04);
       transition: transform 0.2s ease;
       display: flex; 
       flex-direction: column; 
       justify-content: center; 
-      align-items: center; /* Centrar horizontalmente también */
+      align-items: center; 
+      /* Para que la primera y última card tengan espacio y puedan centrarse */
+      /* Esto se hará con pseudo-elementos en el contenedor */
     }
+    /* Pseudo-elementos para dar espacio al inicio y final del carrusel */
+    .benefits-cards::before,
+    .benefits-cards::after {
+        content: '';
+        min-width: calc((100vw - 80vw - 16px) / 2);
+    }
+    /* Estilos específicos para el indicador de scroll, que ahora es el ::after del contenedor de texto */
+    .scroll-indicator-wrapper {
+        text-align: center; /* Contenedor para centrar el span */
+        margin-top: -35px; /* Ajustar para que quede debajo de las cards pero dentro del bg */
+        position: relative; /* Para que el z-index funcione si es necesario */
+        z-index: 5; /* Para asegurar que está encima de las cards si hay solapamiento */
+        height: 20px; /* Espacio para el indicador */
+    }
+    .scroll-indicator-text {
+      font-size: 0.9rem; 
+      color: #777; 
+      background-color: rgba(245, 240, 232, 0.95);
+      padding: 6px 12px; 
+      border-radius: 6px;
+      white-space: nowrap; 
+      display: inline-block; /* Para que el padding funcione bien */
+    }
+
 
     .card:hover {
       transform: translateY(-4px);
@@ -70,36 +95,23 @@
     }
 
     .card .icon {
-      font-size: 2.2rem; /* Aumentado */
-      margin-bottom: 10px; /* Aumentado */
+      font-size: 2.8rem; /* Aumentado significativamente */
+      margin-bottom: 12px; 
     }
 
     .card h3 {
-      font-size: 1.25rem; /* Aumentado */
-      margin-bottom: 8px; /* Aumentado */
+      font-size: 1.4rem; /* Aumentado significativamente */
+      margin-bottom: 10px; 
       color: #3b3a36;
     }
 
     .card p {
-      font-size: 0.95rem; /* Aumentado */
+      font-size: 1rem; /* Aumentado significativamente */
       color: #444;
-      line-height: 1.45; /* Aumentado */
-      max-width: 90%; /* Para que no se pegue a los bordes */
+      line-height: 1.5; 
+      max-width: 90%; 
     }
     
-    .benefits-cards::after {
-      content: "⬅️ desliza para ver más ➡️"; 
-      position: absolute;
-      bottom: 15px; /* Ajustado para estar dentro del padding del contenedor */
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.85rem; 
-      color: #777; 
-      background-color: rgba(245, 240, 232, 0.9);
-      padding: 5px 10px; /* Más padding interno */
-      border-radius: 6px;
-      white-space: nowrap; /* Para que no se rompa en dos líneas */
-    }
 
     @media (min-width: 768px) {
       .benefits-cards {
@@ -111,6 +123,14 @@
         padding: 60px 20px; 
         margin: 80px auto;
       }
+      .benefits-cards::before,
+      .benefits-cards::after {
+          content: none; /* Eliminar espaciadores en escritorio */
+          min-width: 0;
+      }
+      .scroll-indicator-wrapper {
+          display: none; /* Ocultar wrapper del indicador en escritorio */
+      }
       .card {
         width: auto; 
         min-width: unset; 
@@ -119,7 +139,7 @@
         scroll-snap-align: unset; 
         padding: 24px; 
         display: block; 
-        align-items: unset; /* Resetear align-items */
+        align-items: unset; 
       }
       .card .icon {
         font-size: 2.2rem; 
@@ -132,12 +152,7 @@
       .card p {
         font-size: 1rem; 
         line-height: 1.6; 
-        max-width: 100%; /* Resetear max-width */
-      }
-      .benefits-cards::after {
-        content: ""; 
-        padding: 0;
-        background-color: transparent;
+        max-width: 100%; 
       }
       /* ... otros estilos de escritorio ... */
       .header-intro h2 {
@@ -254,6 +269,9 @@
         <p>Nadie debería trabajar aislado. Esta red es para apoyarse.</p>
       </div>
     </section>
+    <div class="scroll-indicator-wrapper">
+      <span class="scroll-indicator-text">⬅️ desliza para ver más ➡️</span>
+    </div>
 
     <p class="cta-text">
       Estamos creando una comunidad práctica y cercana.  
