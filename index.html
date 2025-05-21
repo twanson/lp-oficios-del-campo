@@ -28,30 +28,39 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     }
 
-    /* Estilos base para .benefits-cards y .card (móvil primero) */
+    .benefits-carousel-wrapper {
+      position: relative; /* Contenedor para las flechas */
+      margin: 50px auto;
+      max-width: 100vw; /* Asegurar que no se desborde */
+    }
+
     .benefits-cards {
       background-color: #f5f0e8;
-      padding: 30px 0 45px 0; /* Ajustado padding inferior para el indicador interno */
+      padding: 30px 0; 
       display: flex; 
       overflow-x: auto; 
       overflow-y: hidden; 
       scroll-snap-type: x mandatory; 
       gap: 16px; 
-      margin: 50px auto;
       border-radius: 12px;
       -webkit-overflow-scrolling: touch; 
-      position: relative; 
+      /* Quitar márgenes laterales para que el scroll llegue a los bordes */
+      margin-left: 0;
+      margin-right: 0;
+      /* Padding para que las cards no se peguen a los bordes del contenedor visual */
+      padding-left: 20px; 
+      padding-right: 20px;
     }
-    /* Pseudo-elementos para dar espacio al inicio y final del carrusel */
-    .benefits-cards::before,
+    /* Pseudo-elementos para dar espacio al inicio y final del carrusel si es necesario */
+    /* .benefits-cards::before,
     .benefits-cards::after {
         content: '';
-        min-width: calc((100vw - 80vw - 16px) / 2);
-    }
+        min-width: calc((100vw - 75vw - 16px) / 2); 
+    } */
 
     .card {
-      width: 80vw; 
-      min-width: 80vw; 
+      width: 75vw; /* Reducido el ancho para ver parte de la siguiente */
+      min-width: 75vw; 
       aspect-ratio: 1 / 1; 
       flex: 0 0 auto; 
       scroll-snap-align: center; 
@@ -74,43 +83,65 @@
     }
 
     .card .icon {
-      font-size: 3.5rem; /* Aumentado más */
-      margin-bottom: 10px; 
+      font-size: 3rem; /* Aumentado */
+      margin-bottom: 8px; 
     }
 
     .card h3 {
-      font-size: 1.4rem; 
-      margin-bottom: 10px; 
+      font-size: 1.3rem; /* Aumentado */
+      margin-bottom: 6px; 
       color: #3b3a36;
     }
 
     .card p {
-      font-size: 1rem; 
+      font-size: 0.95rem; /* Aumentado */
       color: #444;
-      line-height: 1.5; 
+      line-height: 1.4;
       max-width: 90%; 
     }
     
-    .scroll-indicator-wrapper {
-        position: absolute; /* Posicionar relativo a .benefits-cards */
-        bottom: 15px; /* Distancia desde el borde inferior del contenedor */
-        left: 0; /* Asegurar que ocupa todo el ancho para centrar el span */
-        right: 0;
-        text-align: center; 
-        z-index: 5; 
-    }
-    .scroll-indicator-text {
-      font-size: 0.9rem; 
-      color: #777; 
-      background-color: rgba(245, 240, 232, 0.95);
-      padding: 6px 12px; 
-      border-radius: 6px;
-      white-space: nowrap; 
-      display: inline-block; 
+    .carousel-arrow {
+      display: none; /* Oculto por defecto, se muestra en móvil */
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.7);
+      border: 1px solid #dfd7cc;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      color: #3b3a36;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
+    .carousel-arrow.left {
+      left: 5px;
+    }
+    .carousel-arrow.right {
+      right: 5px;
+    }
+
+    @media (max-width: 767px) { /* Estilos solo para móvil */
+      .carousel-arrow {
+        display: flex; 
+      }
+      .benefits-cards {
+        /* Asegurar que el scroll no oculte las flechas si el padding es pequeño */
+         padding-left: 50px; 
+         padding-right: 50px;
+      }
+    }
 
     @media (min-width: 768px) {
+      .benefits-carousel-wrapper { /* Ocultar wrapper de flechas en escritorio */
+         margin: 80px auto; /* Restaurar margen original de la sección */
+      }
       .benefits-cards {
         display: grid; 
         grid-template-columns: repeat(3, 1fr);
@@ -118,15 +149,10 @@
         max-width: 1000px; 
         gap: 30px; 
         padding: 60px 20px; 
-        margin: 80px auto;
+        margin: 0 auto; /* El margen ahora lo controla el wrapper */
       }
-      .benefits-cards::before,
-      .benefits-cards::after {
-          content: none; 
-          min-width: 0;
-      }
-      .scroll-indicator-wrapper {
-          display: none; 
+      .carousel-arrow {
+        display: none !important; /* Asegurar que estén ocultas */
       }
       .card {
         width: auto; 
@@ -249,26 +275,27 @@
       </a>
     </div>
 
-    <section class="benefits-cards">
-      <div class="card">
-        <div class="icon">🌱</div>
-        <h3>Aprende de otros</h3>
-        <p>Resuelve dudas reales sobre lo que haces cada día.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🔧</div>
-        <h3>Comparte soluciones</h3>
-        <p>Lo que funciona (y lo que no) entre quienes ya lo han vivido.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🤝</div>
-        <h3>Conecta con otros oficios</h3>
-        <p>Nadie debería trabajar aislado. Esta red es para apoyarse.</p>
-      </div>
-      <div class="scroll-indicator-wrapper">
-        <span class="scroll-indicator-text">⬅️ desliza para ver más ➡️</span>
-      </div>
-    </section>
+    <div class="benefits-carousel-wrapper">
+      <div class="carousel-arrow left">‹</div>
+      <section class="benefits-cards">
+        <div class="card">
+          <div class="icon">🌱</div>
+          <h3>Aprende de otros</h3>
+          <p>Resuelve dudas reales sobre lo que haces cada día.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔧</div>
+          <h3>Comparte soluciones</h3>
+          <p>Lo que funciona (y lo que no) entre quienes ya lo han vivido.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🤝</div>
+          <h3>Conecta con otros oficios</h3>
+          <p>Nadie debería trabajar aislado. Esta red es para apoyarse.</p>
+        </div>
+      </section>
+      <div class="carousel-arrow right">›</div>
+    </div>
 
     <p class="cta-text">
       Estamos creando una comunidad práctica y cercana.  
@@ -315,7 +342,7 @@
     function scrollToTop() {
       setTimeout(function() {
         window.scrollTo(0, 0);
-      }, 50); // Aumentamos ligeramente el timeout a 50ms
+      }, 50); 
     }
 
     window.onload = scrollToTop;
@@ -323,6 +350,31 @@
     window.addEventListener('pageshow', function(event) {
       if (event.persisted) {
         scrollToTop();
+      }
+    });
+
+    // Script para las flechas del carrusel
+    document.addEventListener('DOMContentLoaded', function() {
+      const wrapper = document.querySelector('.benefits-carousel-wrapper');
+      if (wrapper) {
+        const benefitsCards = wrapper.querySelector('.benefits-cards');
+        const leftArrow = wrapper.querySelector('.carousel-arrow.left');
+        const rightArrow = wrapper.querySelector('.carousel-arrow.right');
+        const cardWidth = () => {
+          const firstCard = benefitsCards.querySelector('.card');
+          return firstCard ? firstCard.offsetWidth : 0;
+        };
+        const gap = 16; // Debe coincidir con el gap en CSS
+
+        if (benefitsCards && leftArrow && rightArrow) {
+          leftArrow.addEventListener('click', function() {
+            benefitsCards.scrollBy({ left: -(cardWidth() + gap), behavior: 'smooth' });
+          });
+
+          rightArrow.addEventListener('click', function() {
+            benefitsCards.scrollBy({ left: cardWidth() + gap, behavior: 'smooth' });
+          });
+        }
       }
     });
   </script>
