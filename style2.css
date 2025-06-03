@@ -1,7 +1,15 @@
+:root {
+  --color-primary: #0A6E3E; /* Verde esmeralda */
+  --color-secondary: #F2E2C4; /* Beige cálido */
+  --color-accent: #B84A1C; /* Terracota */
+  --color-background: #FAF7F2; /* Fondo cálido */
+  --color-text: #333333;
+}
+
 body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: #f9f6f0;
+  background-color: var(--color-background);
   color: #3b3a36;
   padding: 20px;
   line-height: 1.6;
@@ -42,6 +50,14 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 12px;
+  border: 2px solid var(--color-primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image-container:hover .hero-image {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(10, 110, 62, 0.3);
 }
 
 .oficio-info {
@@ -82,7 +98,7 @@ h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2.5em;
   margin-bottom: 0.5em;
-  color: #2c3e50;
+  color: var(--color-primary);
   line-height: 1.3;
   padding: 0 15px;
 }
@@ -123,20 +139,22 @@ h1 {
 
 .cta-button {
   display: inline-block;
-  padding: 15px 30px;
-  background-color: #a05f2d;
+  padding: 16px 32px;
+  background-color: var(--color-primary);
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 10px;
   transition: all 0.3s ease;
   margin: 1em 0;
+  box-shadow: 0 4px 12px rgba(10, 110, 62, 0.25);
+  font-size: 1.2rem;
 }
 
 .cta-button:hover {
-  background-color: #8e4f20;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #085a33;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(10, 110, 62, 0.4);
 }
 
 .footer-text {
@@ -168,9 +186,8 @@ h1 {
     aspect-ratio: 1;
   }
   .cta-button {
-    width: 90%;
-    max-width: 300px;
-    box-sizing: border-box;
+    padding: 14px 28px;
+    font-size: 1.1rem;
   }
 }
 
@@ -214,7 +231,7 @@ h1 {
 .header-intro h1 {
   font-size: 3rem;
   font-family: 'Playfair Display', Georgia, serif;
-  color: #3b3a36;
+  color: var(--color-primary);
   font-weight: 700;
   margin-bottom: 0.7em;
 }
@@ -222,7 +239,7 @@ h1 {
 .header-intro h2 {
   font-size: 1.5rem;
   font-weight: 400;
-  color: #5c5c5c;
+  color: var(--color-accent);
   margin-bottom: 1.5em;
 }
 
@@ -254,5 +271,323 @@ h1 {
   }
   .header-intro p {
     font-size: 0.98rem;
+  }
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 3em;
+  padding: 3em 0 2em 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo-container {
+  margin-bottom: 2em;
+}
+
+.main-logo {
+  width: 280px;
+  height: 280px;
+  max-width: 280px;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.main-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.5em;
+  margin: 0.5em 0;
+  color: var(--color-primary);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 2em;
+  color: var(--color-accent);
+  margin: 1em 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.description {
+  font-size: 1.4em;
+  color: #666;
+  max-width: 650px;
+  margin: 1.5em auto 0 auto;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .main-header {
+    padding: 2em 0 1.5em 0;
+    margin-bottom: 2em;
+  }
+  
+  .main-logo {
+    width: 220px;
+    height: 220px;
+    max-width: 220px;
+  }
+  
+  .main-header h1 {
+    font-size: 3.2em;
+  }
+  
+  .subtitle {
+    font-size: 1.6em;
+  }
+  
+  .description {
+    font-size: 1.2em;
+  }
+
+  /* Ajustes para botones en móvil */
+  .cta-button {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    width: 90%;
+    max-width: 300px;
+    box-sizing: border-box;
+  }
+  
+  /* Ajustes para beneficios en móvil */
+  .benefits-cards {
+    padding: 30px 15px;
+    border-radius: 16px;
+  }
+  
+  .card .icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2.5rem;
+  }
+  
+  .card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .card p {
+    font-size: 0.95rem;
+  }
+  
+  /* Ajustes para dividers en móvil */
+  .section-divider {
+    margin: 40px 0;
+    height: 50px;
+  }
+  
+  .section-divider::before {
+    font-size: 1.5rem;
+    padding: 0 15px;
+  }
+  
+  /* Ajustes para texto destacado en móvil */
+  .cta-text {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+  
+  .intro {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+  
+  /* Ajustes para imágenes del mosaico en móvil */
+  .hero-image {
+    border-width: 1px; /* Borde más fino en móvil */
+  }
+  
+  .hero-image-container:hover .hero-image {
+    transform: scale(1.02); /* Menos zoom en móvil */
+  }
+  
+  /* Ajustes para formulario en móvil */
+  .formulario {
+    margin: 0 10px;
+    border-radius: 16px;
+  }
+  
+  .formulario h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .formulario p {
+    font-size: 1rem !important;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Ajustes específicos para pantallas muy pequeñas */
+  .main-header h1 {
+    font-size: 2.8em;
+  }
+  
+  .subtitle {
+    font-size: 1.4em;
+  }
+  
+  .description {
+    font-size: 1.1em;
+  }
+  
+  .main-logo {
+    width: 180px;
+    height: 180px;
+    max-width: 180px;
+  }
+  
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  
+  .card .icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  
+  .section-divider::before {
+    font-size: 1.2rem;
+    padding: 0 10px;
+  }
+  
+  .benefits-cards {
+    padding: 20px 10px;
+  }
+}
+
+/* Estilos para elementos destacados */
+.destacado {
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.description strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.card p strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.cta-text em {
+  color: var(--color-accent);
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Mejorar la sección de beneficios */
+.benefits-cards {
+  background: linear-gradient(135deg, rgba(242, 226, 196, 0.4) 0%, rgba(242, 226, 196, 0.2) 100%);
+  border-radius: 20px;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.benefits-cards::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  border-radius: 22px;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.card .icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background: radial-gradient(circle, rgba(10,110,62,0.1) 0%, rgba(255,255,255,0) 70%);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.card h3 {
+  color: var(--color-primary);
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+/* Dividers decorativos */
+.section-divider {
+  position: relative;
+  height: 60px;
+  margin: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-divider::before {
+  content: "♻️";
+  font-size: 2rem;
+  background: var(--color-background);
+  padding: 0 20px;
+  color: var(--color-primary);
+  z-index: 2;
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-primary) 20%, var(--color-primary) 80%, transparent 100%);
+  z-index: 1;
+}
+
+/* Mejorar formulario */
+.formulario {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.formulario::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent), var(--color-primary));
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .benefits-cards {
+    padding: 30px 15px;
+    border-radius: 16px;
+  }
+  
+  .card .icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2.5rem;
+  }
+  
+  .section-divider {
+    margin: 40px 0;
   }
 } 

@@ -3,15 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Red de Oficios del Campo</title>
+  <title>Red de Oficios Circulares</title>
+  <meta name="description" content="Conectamos artesanos que transforman materiales con sus manos y buscan cerrar ciclos. Uniendo artesanía tradicional y economía circular.">
+  <meta name="keywords" content="oficios circulares, artesanía, economía circular, sostenibilidad, upcycling, artesanos">
   <link rel="stylesheet" href="style2.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --color-primary: #0A6E3E; /* Verde esmeralda */
+      --color-secondary: #F2E2C4; /* Beige cálido */
+      --color-accent: #B84A1C; /* Terracota */
+      --color-background: #FAF7F2; /* Fondo cálido */
+      --color-text: #333333;
+    }
+    
     html {
       scroll-behavior: smooth;
     }
     .cta-button {
-      background-color: #a05f2d;
+      background-color: var(--color-primary);
       color: #fff;
       text-decoration: none;
       padding: 14px 28px;
@@ -23,7 +33,7 @@
     }
 
     .cta-button:hover {
-      background-color: #8a4e1f;
+      background-color: #085a33;
       transform: translateY(-2px);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     }
@@ -35,7 +45,7 @@
     }
 
     .benefits-cards {
-      background-color: #f5f0e8;
+      background-color: var(--color-secondary);
       padding: 30px 0; 
       display: flex; 
       overflow-x: auto; 
@@ -84,7 +94,8 @@
 
     .card .icon {
       font-size: 3rem; /* Aumentado */
-      margin-bottom: 8px; 
+      margin-bottom: 8px;
+      color: var(--color-primary);
     }
 
     .card h3 {
@@ -209,109 +220,122 @@
   </style>
 </head>
 <body>
-  <section class="header-intro">
-    <h1>Oficios del Campo</h1>
-    <div class="divider-icon">🌾</div>
-    <h2>Una red para quienes trabajan con las manos y el corazón</h2>
-    <p>
-      Conectamos a personas que cultivan, transforman y elaboran de forma artesanal.<br>
-      Esta red nace para compartir, apoyarse y crecer desde el saber hacer del mundo rural.
-    </p>
-  </section>
   <main class="container">
-    <header class="hero">
+    <header class="main-header">
+      <div class="logo-container">
+        <img src="images/logo degra oscuro.png" alt="Logo Oficios Circulares" class="main-logo">
+      </div>
+      <h1>Oficios Circulares</h1>
+      <p class="subtitle">Una red donde la artesanía tradicional se une a la economía circular</p>
+      <p class="description">
+        Conectamos artesanos que transforman materiales con sus manos y buscan cerrar ciclos.
+        Un espacio para quienes ven en cada <strong>material</strong> una oportunidad y en cada creación un paso hacia un mundo más sostenible.
+      </p>
+    </header>
+
+    <div class="hero">
       <div class="hero-collage">
         <div class="hero-image-container">
-          <img src="images/cultivo.webp" alt="Cultivo ecológico" class="hero-image" />
+          <img src="images/cultivo.webp" alt="Cultivo" class="hero-image" />
           <div class="oficio-info"><span class="oficio-emoji">🥕</span><span class="oficio-nombre">Cultivo</span></div>
         </div>
         <div class="hero-image-container">
-          <img src="images/apicultura.webp" alt="Apicultura artesanal" class="hero-image" />
+          <img src="images/apicultura.webp" alt="Apicultura" class="hero-image" />
           <div class="oficio-info"><span class="oficio-emoji">🐝</span><span class="oficio-nombre">Apicultura</span></div>
         </div>
         <div class="hero-image-container">
-          <img src="images/textil.webp" alt="Artesanía textil" class="hero-image" />
+          <img src="images/textil.webp" alt="Textil" class="hero-image" />
           <div class="oficio-info"><span class="oficio-emoji">🧶</span><span class="oficio-nombre">Textil</span></div>
         </div>
         <div class="hero-image-container">
-          <img src="images/quesos.webp" alt="Elaboración de quesos" class="hero-image" />
+          <img src="images/quesos.webp" alt="Quesos" class="hero-image" />
           <div class="oficio-info"><span class="oficio-emoji">🧀</span><span class="oficio-nombre">Quesos</span></div>
         </div>
         <div class="hero-image-container">
-          <img src="images/cesteria.webp" alt="Cestería tradicional" class="hero-image" />
+          <img src="images/cesteria.webp" alt="Cestería" class="hero-image" />
           <div class="oficio-info"><span class="oficio-emoji">🧺</span><span class="oficio-nombre">Cestería</span></div>
         </div>
         <div class="hero-image-container">
-          <img src="images/jabones.webp" alt="Jabones artesanales" class="hero-image" />
+          <img src="images/jabones.webp" alt="Jabones" class="hero-image" />
           <div class="oficio-info"><span class="oficio-emoji">🧼</span><span class="oficio-nombre">Jabones</span></div>
         </div>
         <div class="hero-image-container">
-          <img src="images/conservas.webp" alt="Conservas artesanales" class="hero-image" />
-          <div class="oficio-info"><span class="oficio-emoji">🥫</span><span class="oficio-nombre">Conservas</span></div>
+          <img src="images/conservas.webp" alt="Upcycling" class="hero-image" />
+          <div class="oficio-info"><span class="oficio-emoji">♻️</span><span class="oficio-nombre">Upcycling</span></div>
         </div>
         <div class="hero-image-container">
-          <img src="images/cuero.webp" alt="Trabajos en cuero" class="hero-image" />
+          <img src="images/cuero.webp" alt="Cuero" class="hero-image" />
           <div class="oficio-info"><span class="oficio-emoji">👞</span><span class="oficio-nombre">Cuero</span></div>
         </div>
         <div class="hero-image-container">
-          <img src="images/ceramica.webp" alt="Cerámica artesanal" class="hero-image" />
+          <img src="images/ceramica.webp" alt="Cerámica" class="hero-image" />
           <div class="oficio-info"><span class="oficio-emoji">🏺</span><span class="oficio-nombre">Cerámica</span></div>
         </div>
         <div class="hero-image-container">
-          <img src="images/mas.webp" alt="Más oficios tradicionales" class="hero-image" />
+          <img src="images/mas.webp" alt="Y más oficios" class="hero-image" />
           <div class="oficio-info"><span class="oficio-emoji">🌾</span><span class="oficio-nombre">Y más...</span></div>
         </div>
       </div>
-    </header>
+    </div>
 
     <p class="intro">
-      Si haces miel, jabones, cultivas plantas o trabajas el cuero…  
-      y a veces te sientes solo, con dudas o sin red… este proyecto es para ti.
+      Si trabajas con tus manos creando productos artesanales y te interesa incorporar principios circulares... o si ya lo haces y a veces te sientes solo, con dudas o sin red... este proyecto es para ti.
     </p>
 
     <div style="text-align: center; margin: 40px 0;">
       <a href="#formulario" class="cta-button">
-        ✍️ Quiero apuntarme
+        ✍️ Quiero unirme
       </a>
     </div>
+
+    <div class="section-divider"></div>
 
     <div class="benefits-carousel-wrapper">
       <div class="carousel-arrow left">‹</div>
       <section class="benefits-cards">
         <div class="card">
           <div class="icon">🌱</div>
-          <h3>Aprende de otros</h3>
-          <p>Resuelve dudas reales sobre lo que haces cada día.</p>
+          <h3>Descubre nuevas posibilidades</h3>
+          <p>Aprende cómo aplicar principios circulares a tu oficio de forma <strong>práctica y rentable</strong>, transformando retos en oportunidades.</p>
         </div>
         <div class="card">
-          <div class="icon">🔧</div>
-          <h3>Comparte soluciones</h3>
-          <p>Lo que funciona (y lo que no) entre quienes ya lo han vivido.</p>
+          <div class="icon">🔄</div>
+          <h3>Comparte conocimiento valioso</h3>
+          <p>Lo que funciona (y lo que no) entre quienes ya están innovando en sus procesos y materiales para crear de forma más sostenible.</p>
         </div>
         <div class="card">
           <div class="icon">🤝</div>
-          <h3>Conecta con otros oficios</h3>
-          <p>Nadie debería trabajar aislado. Esta red es para apoyarse.</p>
+          <h3>Forma parte de una comunidad con propósito</h3>
+          <p>Conecta con otros artesanos que comparten tus valores. Juntos creamos más impacto y abrimos nuevos caminos.</p>
         </div>
       </section>
       <div class="carousel-arrow right">›</div>
     </div>
 
+    <div class="section-divider"></div>
+
     <p class="cta-text">
-      Estamos creando una comunidad práctica y cercana.  
-      Sin postureo. Sin fórmulas mágicas. Sin ruido.  
-      Solo ayuda real entre personas reales.
+      Estamos creando un espacio donde el saber hacer tradicional se encuentra con la innovación circular.  
+      <span class="destacado">Auténtico. Práctico. Transformador.</span>  
+      Una comunidad de personas que crean con las manos y piensan en el futuro.
     </p>
 
     <p class="cta-text">
       Si quieres formar parte desde el principio, deja aquí tu contacto.  
-      No vendemos nada. Solo buscamos a gente como tú.
+      No vendemos nada. Buscamos artesanos y creadores que quieran <em>reimaginar sus oficios</em> para un mundo más sostenible.
     </p>
 
-    <section id="formulario" class="formulario" style="padding: 60px 20px; background-color: #f9f6f0;">
+    <section id="formulario" class="formulario" style="padding: 60px 20px; background-color: var(--color-secondary);">
       <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1em; color: #3b3a36;">
-        📝 Apúntate a Oficios del Campo
+        📝 Únete a Oficios Circulares
       </h2>
+      
+      <p style="text-align: center; font-size: 1.1rem; margin-bottom: 1em; color: #555; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Queremos conocerte y entender cómo podemos crecer juntos en este camino hacia la artesanía circular.
+      </p>
+      <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2em; color: #555; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Este formulario es el primer paso para unirte a nuestra comunidad de personas que honran la tradición mientras abrazan la innovación.
+      </p>
     
       <iframe
         data-tally-src="https://tally.so/embed/mOyV98?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
@@ -321,7 +345,7 @@
         frameborder="0"
         marginheight="0"
         marginwidth="0"
-        title="Formulario Oficios del Campo"
+        title="Formulario Oficios Circulares"
         style="border: none; max-width: 700px; margin: 0 auto; display: block;">
       </iframe>
     
@@ -330,12 +354,12 @@
 
     <div style="text-align: center; margin: 80px 0 40px 0;">
       <a href="#formulario" class="cta-button">
-        ✍️ Quiero apuntarme
+        ♻ Unirme a la comunidad →
       </a>
     </div>
 
     <footer>
-      <p class="footer-text">Proyecto independiente en fase de prueba. Gracias por tu interés 🙏</p>
+      <p class="footer-text">Proyecto independiente en evolución. Reimaginando la artesanía desde 2025 ♻️</p>
     </footer>
   </main>
   <script>
