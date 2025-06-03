@@ -288,9 +288,9 @@ h1 {
 }
 
 .main-logo {
-  width: 280px;
-  height: 280px;
-  max-width: 280px;
+  width: 160px;
+  height: 160px;
+  max-width: 160px;
   display: block;
   margin: 0 auto;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
