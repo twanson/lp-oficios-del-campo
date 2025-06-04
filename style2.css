@@ -235,7 +235,7 @@ h1 {
   }
 
   .hero-image-main {
-    width: 90vw;
+    width: 100%;
     max-width: none;
     margin: 30px auto 60px auto;
     display: block;
@@ -379,11 +379,9 @@ h1 {
 @keyframes fadeIn {
   from { 
     opacity: 0; 
-    transform: translateY(-20px); 
   }
   to { 
     opacity: 1; 
-    transform: translateY(0); 
   }
 }
 
@@ -445,7 +443,7 @@ h1 {
   }
 
   .hero-image-main {
-    width: 85%;
+    width: 100%;
     max-width: none;
     margin: 30px auto 60px auto;
     display: block;
@@ -543,13 +541,10 @@ h1 {
   }
   
   .hero-image-main {
-    width: 85vw;
+    width: 100%;
     margin: 25px auto 50px auto;
     display: block;
     box-sizing: border-box;
-    /* Centrado perfecto en pantallas pequeñas */
-    margin-left: auto;
-    margin-right: auto;
   }
   
   .main-logo {
