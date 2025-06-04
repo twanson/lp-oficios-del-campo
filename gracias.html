@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Gracias por unirte a Oficios Circulares!</title>
+  <meta name="description" content="Página de agradecimiento de Oficios Circulares.">
+  <link rel="icon" type="image/png" href="images/logo degra oscuro.png">
+  <link rel="apple-touch-icon" href="images/logo degra oscuro.png">
+  <link rel="stylesheet" href="style2.css" /> <!-- Reutilizamos el CSS principal -->
+  <style>
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      background-color: #FAF7F2; /* Fondo cálido como en la home */
+      color: #333333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .container-gracias {
+      max-width: 700px;
+      margin: auto;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #0A6E3E; /* Verde esmeralda */
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .imagen-gracias {
+      max-width: 80%;
+      height: auto;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px; /* Opcional: para suavizar bordes si la imagen no es transparente */
+    }
+    a.boton-volver {
+      background-color: #0A6E3E; /* Verde esmeralda */
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    a.boton-volver:hover {
+      background-color: #085a33;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+      .imagen-gracias {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container-gracias">
+    <h1>¡Gracias por unirte a Oficios Circulares!</h1>
+    <p>Muy pronto te contactaremos con novedades. Mientras tanto, puedes volver a la página principal.</p>
+    <img src="images/Ilustracion websin fondo.png" alt="Ilustración Oficios Circulares" class="imagen-gracias">
+    <a href="https://www.oficioscirculares.com/" class="boton-volver">Volver a la página principal</a>
+  </div>
+</body>
+</html> 
