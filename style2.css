@@ -189,148 +189,14 @@ h1 {
     padding: 14px 28px;
     font-size: 1.1rem;
   }
-}
-
-@media screen and (max-width: 480px) {
-  .hero-collage {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 100%;
-    gap: 8px;
-  }
-  .hero-image-container {
-    aspect-ratio: 1;
-    padding: 0;
-  }
-  .oficio-info {
-    padding: 6px 4px 4px 4px;
-    font-size: 0.95em;
-    width: 96%;
-  }
-  .oficio-emoji {
-    font-size: 1.3em;
-    margin-bottom: 1px;
-  }
-  .intro, .cta-text {
-    font-size: 1em;
-  }
-  .benefits li {
-    font-size: 1em;
-  }
-}
-
-.header-intro {
-  text-align: center;
-  margin-top: 80px;
-  margin-bottom: 60px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-}
-
-.header-intro h1 {
-  font-size: 3rem;
-  font-family: 'Playfair Display', Georgia, serif;
-  color: var(--color-primary);
-  font-weight: 700;
-  margin-bottom: 0.7em;
-}
-
-.header-intro h2 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--color-accent);
-  margin-bottom: 1.5em;
-}
-
-.header-intro p {
-  font-size: 1.1rem;
-  color: #444;
-  line-height: 1.6;
-}
-
-.divider-icon {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-@media screen and (max-width: 480px) {
-  .header-intro {
-    margin: 32px auto 30px auto;
-    padding: 0 8px;
-  }
-  .header-intro h1 {
-    font-size: 2rem;
-  }
-  .divider-icon {
-    font-size: 1.1rem;
-    margin-bottom: 0.7rem;
-  }
-  .header-intro h2 {
-    font-size: 1.05rem;
-  }
-  .header-intro p {
-    font-size: 0.98rem;
-  }
-}
-
-.main-header {
-  text-align: center;
-  margin-bottom: 3em;
-  padding: 3em 0 2em 0;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.logo-container {
-  margin-bottom: 2em;
-}
-
-.main-logo {
-  width: 180px;
-  height: 180px;
-  max-width: 180px;
-  display: block;
-  margin: 0 auto;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-}
-
-.main-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 4.5em;
-  margin: 0.5em 0;
-  color: var(--color-primary);
-  line-height: 1.2;
-  font-weight: 700;
-}
-
-.subtitle {
-  font-size: 2em;
-  color: var(--color-accent);
-  margin: 1em 0;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.description {
-  font-size: 1.4em;
-  color: #666;
-  max-width: 650px;
-  margin: 1.5em auto 0 auto;
-  line-height: 1.6;
-}
-
-@media screen and (max-width: 768px) {
   .main-header {
     padding: 2em 0 1.5em 0;
     margin-bottom: 2em;
   }
   
   .main-logo {
-    width: 220px;
-    height: 220px;
-    max-width: 220px;
+    max-width: 520px;
+    max-height: 320px;
   }
   
   .main-header h1 {
@@ -422,7 +288,30 @@ h1 {
 }
 
 @media screen and (max-width: 480px) {
-  /* Ajustes específicos para pantallas muy pequeñas */
+  .hero-collage {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    gap: 8px;
+  }
+  .hero-image-container {
+    aspect-ratio: 1;
+    padding: 0;
+  }
+  .oficio-info {
+    padding: 6px 4px 4px 4px;
+    font-size: 0.95em;
+    width: 96%;
+  }
+  .oficio-emoji {
+    font-size: 1.3em;
+    margin-bottom: 1px;
+  }
+  .intro, .cta-text {
+    font-size: 1em;
+  }
+  .benefits li {
+    font-size: 1em;
+  }
   .main-header h1 {
     font-size: 2.8em;
   }
@@ -436,9 +325,8 @@ h1 {
   }
   
   .main-logo {
-    width: 180px;
-    height: 180px;
-    max-width: 180px;
+    max-width: 375px;
+    max-height: 230px;
   }
   
   .cta-button {
@@ -460,6 +348,115 @@ h1 {
   .benefits-cards {
     padding: 20px 10px;
   }
+}
+
+.header-intro {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.header-intro h1 {
+  font-size: 3rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 0.7em;
+}
+
+.header-intro h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-accent);
+  margin-bottom: 1.5em;
+}
+
+.header-intro p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.divider-icon {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .header-intro {
+    margin: 32px auto 30px auto;
+    padding: 0 8px;
+  }
+  .header-intro h1 {
+    font-size: 2rem;
+  }
+  .divider-icon {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  .header-intro h2 {
+    font-size: 1.05rem;
+  }
+  .header-intro p {
+    font-size: 0.98rem;
+  }
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 3em;
+  padding: 3em 0 2em 0;
+  margin-top: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo-container {
+  margin-bottom: 2em;
+}
+
+.main-logo {
+  width: auto;
+  height: auto;
+  max-width: 750px;
+  max-height: 460px;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  object-fit: contain;
+  background: transparent;
+  box-shadow: 0 8px 32px rgba(10, 110, 62, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+.main-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.5em;
+  margin: 0.5em 0;
+  color: var(--color-primary);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 2em;
+  color: var(--color-accent);
+  margin: 1em 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.description {
+  font-size: 1.4em;
+  color: #666;
+  max-width: 650px;
+  margin: 1.5em auto 0 auto;
+  line-height: 1.6;
 }
 
 /* Estilos para elementos destacados */
