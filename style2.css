@@ -445,7 +445,7 @@ h1 {
   }
 
   .hero-image-main {
-    width: 90vw;
+    width: 85%;
     max-width: none;
     margin: 30px auto 60px auto;
     display: block;
