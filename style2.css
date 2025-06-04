@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
   text-align: center;
   padding: 0 15px;
@@ -189,6 +189,34 @@ h1 {
     padding: 14px 28px;
     font-size: 1.1rem;
   }
+  .main-logo {
+    width: 95%;
+    max-width: 800px;
+    height: auto;
+    margin: 40px auto 30px auto;
+  }
+  .main-header {
+    padding: 0.3em 0 1.5em 0;
+    margin-bottom: 2em;
+  }
+  
+  .main-header h1 {
+    font-size: 3.2em;
+  }
+  
+  .subtitle {
+    font-size: 1.6em;
+  }
+  
+  .description {
+    font-size: 1.2em;
+  }
+
+  .hero-image-main {
+    width: 95vw;
+    max-width: none;
+    margin: 30px auto 60px auto;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -277,8 +305,8 @@ h1 {
 .main-header {
   text-align: center;
   margin-bottom: 3em;
-  padding: 3em 0 2em 0;
-  max-width: 800px;
+  padding: 0.5em 0 2em 0;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -296,6 +324,35 @@ h1 {
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
+/* Imagen hero principal */
+.hero-image-main {
+  width: 98%;
+  max-width: 1300px;
+  height: auto;
+  margin: 60px auto 80px auto;
+  display: block;
+  /* Para retina y alta resolución */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  /* Sombra sutil */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  /* Animación fade-in */
+  animation: fadeIn 1.2s ease-in;
+}
+
+/* Animación fade-in */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
 .main-header h1 {
   font-family: 'Playfair Display', serif;
   font-size: 4.5em;
@@ -303,6 +360,20 @@ h1 {
   color: var(--color-primary);
   line-height: 1.2;
   font-weight: 700;
+  /* Animación sutil de entrada */
+  animation: fadeInTitle 1.4s ease-in 0.3s both;
+}
+
+/* Animación para el título */
+@keyframes fadeInTitle {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
 .subtitle {
@@ -323,14 +394,8 @@ h1 {
 
 @media screen and (max-width: 768px) {
   .main-header {
-    padding: 2em 0 1.5em 0;
+    padding: 0.3em 0 1.5em 0;
     margin-bottom: 2em;
-  }
-  
-  .main-logo {
-    width: 220px;
-    height: 220px;
-    max-width: 220px;
   }
   
   .main-header h1 {
@@ -343,6 +408,12 @@ h1 {
   
   .description {
     font-size: 1.2em;
+  }
+
+  .hero-image-main {
+    width: 95vw;
+    max-width: none;
+    margin: 30px auto 60px auto;
   }
 
   /* Ajustes para botones en móvil */
@@ -433,6 +504,11 @@ h1 {
   
   .description {
     font-size: 1.1em;
+  }
+  
+  .hero-image-main {
+    width: 98vw;
+    margin: 25px auto 50px auto;
   }
   
   .main-logo {
@@ -592,4 +668,7 @@ h1 {
   }
 }
 
-/* Cache bust - Actualización logo desktop 160px - 2025-06-03 */ 
+/* Cache bust - Actualización logo desktop 160px - 2025-06-03 */
+
+
+/* Cache bust - Actualización imagen hero GIGANTE - 2025-06-04 */
