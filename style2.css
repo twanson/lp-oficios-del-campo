@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
   --color-primary: #0A6E3E; /* Verde esmeralda */
   --color-secondary: #F2E2C4; /* Beige cálido */
@@ -13,13 +17,17 @@ body {
   color: #3b3a36;
   padding: 20px;
   line-height: 1.6;
+  /* Prevenir overflow horizontal */
+  overflow-x: hidden;
 }
 
 .container {
-  max-width: 1400px;
+  max-width: min(1400px, 100vw);
   margin: auto;
   text-align: center;
   padding: 0 15px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .hero {
@@ -173,7 +181,7 @@ h1 {
 
 @media screen and (max-width: 768px) {
   body {
-    padding: 10px;
+    padding: 5px;
   }
   h1 {
     font-size: 2em;
@@ -213,9 +221,10 @@ h1 {
   }
 
   .hero-image-main {
-    width: 95vw;
+    width: 90vw;
     max-width: none;
     margin: 30px auto 60px auto;
+    box-sizing: border-box;
   }
 }
 
@@ -243,6 +252,10 @@ h1 {
   }
   .benefits li {
     font-size: 1em;
+  }
+  /* Ajustes específicos para pantallas muy pequeñas */
+  body {
+    padding: 2px;
   }
 }
 
@@ -411,9 +424,10 @@ h1 {
   }
 
   .hero-image-main {
-    width: 95vw;
+    width: 90vw;
     max-width: none;
     margin: 30px auto 60px auto;
+    box-sizing: border-box;
   }
 
   /* Ajustes para botones en móvil */
@@ -507,7 +521,7 @@ h1 {
   }
   
   .hero-image-main {
-    width: 98vw;
+    width: 85vw;
     margin: 25px auto 50px auto;
   }
   
