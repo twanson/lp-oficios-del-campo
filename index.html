@@ -237,13 +237,41 @@
         text-align: center; 
       }
     }
+
+    /* Estilos para el contenedor del vídeo del Hero */
+    .video-container-hero {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 56.25%; /* Proporción 16:9 */
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    .video-container-hero iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
   </style>
 </head>
 <body>
   <main class="container">
     <header class="main-header">
-      <!-- Imagen Hero -->
-      <img src="images/Ilustracion websin fondo.png" alt="Hero Oficios Circulares" class="hero-image-main">
+      <!-- Vídeo Hero de YouTube -->
+      <div class="video-container-hero">
+        <iframe 
+          src="https://www.youtube.com/embed/A_mKHjXjyhM?autoplay=1&mute=1&loop=1&playlist=A_mKHjXjyhM&controls=0&modestbranding=1&showinfo=0" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+          title="Video de Oficios Circulares">
+        </iframe>
+      </div>
       
       <h1>Oficios Circulares</h1>
       <p class="subtitle">Una red donde la artesanía tradicional se une a la economía circular</p>
@@ -333,6 +361,11 @@
     </div>
 
     <div class="section-divider"></div>
+
+    <!-- Ilustración reubicada -->
+    <div style="text-align: center; margin: 60px 0;">
+      <img src="images/Ilustracion websin fondo.png" alt="Ilustración Oficios Circulares" style="max-width: 500px; width: 90%; height: auto; border-radius: 8px;">
+    </div>
 
     <p class="cta-text">
       Estamos creando un espacio donde el saber hacer tradicional se encuentra con la innovación circular.  
